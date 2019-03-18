@@ -12,6 +12,8 @@ class TodoViewController: UIViewController {
 
     @IBOutlet weak var itemsTableView: UITableView!
     
+    var items: [Item] = [Item]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,6 +22,9 @@ class TodoViewController: UIViewController {
         
         // Register NIB file for Cell
         registerComponent()
+        
+        // Load items data
+        loadItems()
     }
     
     func initDelegate() {
@@ -30,17 +35,27 @@ class TodoViewController: UIViewController {
     func registerComponent() {
         itemsTableView.register(UINib(nibName: "TodoItemCell", bundle: nil), forCellReuseIdentifier: "toDoItemCell")
     }
+    
+    func loadItems() {
+        let item1 = Item(title: "Buy an egg", done: false)
+        let item2 = Item(title: "Save the world", done: false)
+        let item3 = Item(title: "Get seven dragonball", done: false)
+        
+        items.append(item1)
+        items.append(item2)
+        items.append(item3)
+    }
 }
 
 extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "toDoItemCell", for: indexPath) as! TodoItemCell
         
-        cell.titleLabel.text = "Hello"
+        cell.titleLabel.text = items[indexPath.row].title
         
         return cell
     }
