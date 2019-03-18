@@ -47,7 +47,7 @@
         <!--Add New To Do-->
         <scene sceneID="dg8-0d-6kJ">
             <objects>
-                <viewController id="zTX-yi-JwJ" sceneMemberID="viewController">
+                <viewController id="zTX-yi-JwJ" customClass="AddTodoViewController" customModule="iOS_Todo_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oOw-A0-SdG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
