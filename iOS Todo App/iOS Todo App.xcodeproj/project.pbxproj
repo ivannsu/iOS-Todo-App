@@ -55,13 +55,37 @@
 			isa = PBXGroup;
 			children = (
 				25200FA4223E9A5D0093EAC4 /* AppDelegate.swift */,
-				25200FA6223E9A5D0093EAC4 /* ViewController.swift */,
-				25200FA8223E9A5D0093EAC4 /* Main.storyboard */,
-				25200FAB223E9A5E0093EAC4 /* Assets.xcassets */,
-				25200FAD223E9A5E0093EAC4 /* LaunchScreen.storyboard */,
+				2570756C223F1D9100FF4805 /* Controllers */,
+				2570756A223F1D8000FF4805 /* Views */,
+				2570756B223F1D8700FF4805 /* Supporting Files */,
 				25200FB0223E9A5E0093EAC4 /* Info.plist */,
 			);
 			path = "iOS Todo App";
+			sourceTree = "<group>";
+		};
+		2570756A223F1D8000FF4805 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				25200FA8223E9A5D0093EAC4 /* Main.storyboard */,
+				25200FAD223E9A5E0093EAC4 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2570756B223F1D8700FF4805 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				25200FAB223E9A5E0093EAC4 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2570756C223F1D9100FF4805 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				25200FA6223E9A5D0093EAC4 /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
