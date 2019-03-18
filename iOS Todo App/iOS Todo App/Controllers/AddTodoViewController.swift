@@ -23,9 +23,6 @@ class AddTodoViewController: UIViewController {
          navigationController?.viewControllers.remove(at: index)
          navigationController?.viewControllers.removeLast()
         */
-//        let lastNav = navigationController?.viewControllers.removeLast()
-//
-//        print(lastNav!)
         
         if titleTextField.text == "" {
             print("Title is empty!")
