@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mze-0V-wa8">
-                        <rect key="frame" x="16" y="11" width="42" height="21"/>
+                        <rect key="frame" x="16" y="11" width="288" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -32,6 +32,7 @@
             <connections>
                 <outlet property="titleLabel" destination="mze-0V-wa8" id="AOJ-H9-jev"/>
             </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="122.33883058470765"/>
         </tableViewCell>
     </objects>
 </document>
