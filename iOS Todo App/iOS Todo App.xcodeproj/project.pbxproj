@@ -12,6 +12,7 @@
 		25200FAA223E9A5D0093EAC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25200FA8223E9A5D0093EAC4 /* Main.storyboard */; };
 		25200FAC223E9A5E0093EAC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25200FAB223E9A5E0093EAC4 /* Assets.xcassets */; };
 		25200FAF223E9A5E0093EAC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25200FAD223E9A5E0093EAC4 /* LaunchScreen.storyboard */; };
+		25533005223F364500440432 /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25533004223F364500440432 /* AddTodoViewController.swift */; };
 		25707577223F22F700FF4805 /* TodoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25707575223F22F700FF4805 /* TodoItemCell.swift */; };
 		25707578223F22F700FF4805 /* TodoItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25707576223F22F700FF4805 /* TodoItemCell.xib */; };
 		2570757B223F268D00FF4805 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2570757A223F268D00FF4805 /* Item.swift */; };
@@ -25,6 +26,7 @@
 		25200FAB223E9A5E0093EAC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25200FAE223E9A5E0093EAC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25200FB0223E9A5E0093EAC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25533004223F364500440432 /* AddTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
 		25707575223F22F700FF4805 /* TodoItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemCell.swift; sourceTree = "<group>"; };
 		25707576223F22F700FF4805 /* TodoItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoItemCell.xib; sourceTree = "<group>"; };
 		2570757A223F268D00FF4805 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				25200FA6223E9A5D0093EAC4 /* TodoViewController.swift */,
+				25533004223F364500440432 /* AddTodoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2570757B223F268D00FF4805 /* Item.swift in Sources */,
+				25533005223F364500440432 /* AddTodoViewController.swift in Sources */,
 				25200FA7223E9A5D0093EAC4 /* TodoViewController.swift in Sources */,
 				25707577223F22F700FF4805 /* TodoItemCell.swift in Sources */,
 				25200FA5223E9A5D0093EAC4 /* AppDelegate.swift in Sources */,
