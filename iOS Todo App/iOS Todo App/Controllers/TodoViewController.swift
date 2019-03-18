@@ -26,8 +26,6 @@ class TodoViewController: UIViewController {
         
         // Load items data
         loadItems()
-        
-        print("sample: \(sampleString ?? "hello world from sample")")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
