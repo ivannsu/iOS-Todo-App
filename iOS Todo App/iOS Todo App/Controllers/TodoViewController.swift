@@ -75,6 +75,11 @@ extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension TodoViewController: TodoProtocol {
     func receiveNewItemData(title: String) {
-        print("received from TodoView: \(title)")
+        let newItem = Item(title: title, done: false)
+        
+        items.append(newItem)
+        itemsTableView.reloadData()
+        
+        // print("received from TodoView: \(title)")
     }
 }
