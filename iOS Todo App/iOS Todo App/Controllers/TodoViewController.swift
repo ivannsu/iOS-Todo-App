@@ -45,6 +45,10 @@ class TodoViewController: UIViewController {
         items.append(item2)
         items.append(item3)
     }
+    
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "goToAddToDo", sender: self)
+    }
 }
 
 extension TodoViewController: UITableViewDelegate, UITableViewDataSource {

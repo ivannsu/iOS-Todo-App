@@ -30,15 +30,46 @@
                     <navigationItem key="navigationItem" title="To Do" id="UAC-Mo-4Nr">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gLa-Xu-wHH">
                             <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="nZo-K1-bGC"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="itemsTableView" destination="d7k-vG-aXT" id="Qn5-fP-SsH"/>
+                        <segue destination="zTX-yi-JwJ" kind="show" identifier="goToAddToDo" id="XGp-dn-Vre"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Add New To Do-->
+        <scene sceneID="dg8-0d-6kJ">
+            <objects>
+                <viewController id="zTX-yi-JwJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oOw-A0-SdG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6V5-lq-a9U">
+                                <rect key="frame" x="71" y="160" width="232" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="j2B-5r-5AX"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add New To Do" id="zow-4Q-vvY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="rYD-h4-JeG"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZGG-7X-79R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1821.5999999999999" y="133.5832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UEF-zv-lPI">
