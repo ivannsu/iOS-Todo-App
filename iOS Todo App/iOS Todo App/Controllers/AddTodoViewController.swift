@@ -16,7 +16,7 @@ class AddTodoViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        
+        print(titleTextField.text!)
     }
 
 }
