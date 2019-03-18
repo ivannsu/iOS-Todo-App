@@ -13,7 +13,6 @@ class TodoViewController: UIViewController {
     @IBOutlet weak var itemsTableView: UITableView!
     
     var items: [Item] = [Item]()
-    var sampleString: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
