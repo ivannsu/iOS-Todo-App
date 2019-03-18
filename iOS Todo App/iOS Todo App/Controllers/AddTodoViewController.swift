@@ -9,9 +9,14 @@
 import UIKit
 
 class AddTodoViewController: UIViewController {
-
+    @IBOutlet weak var titleTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        
     }
 
 }

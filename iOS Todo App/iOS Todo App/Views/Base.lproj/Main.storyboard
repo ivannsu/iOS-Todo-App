@@ -64,8 +64,15 @@
                         <viewLayoutGuide key="safeArea" id="j2B-5r-5AX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New To Do" id="zow-4Q-vvY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="rYD-h4-JeG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="rYD-h4-JeG">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="zTX-yi-JwJ" id="dqK-Hb-N9f"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="titleTextField" destination="6V5-lq-a9U" id="nPc-o7-Q42"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGG-7X-79R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
