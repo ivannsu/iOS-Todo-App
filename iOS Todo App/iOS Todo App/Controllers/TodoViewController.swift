@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class TodoViewController: UIViewController {
 
     @IBOutlet weak var itemsTableView: UITableView!
     
+    var container: NSPersistentContainer!
     var items: [Item] = [Item]()
     
     override func viewDidLoad() {
