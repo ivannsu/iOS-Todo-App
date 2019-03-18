@@ -63,6 +63,10 @@ extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-    
+}
+
+extension TodoViewController: TodoProtocol {
+    func receiveNewItemData(title: String) {
+        print("received from TodoView: \(title)")
+    }
 }
