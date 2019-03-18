@@ -46,7 +46,7 @@ class TodoViewController: UIViewController {
     
     func loadItems() {
         let item1 = Item(title: "Buy an egg", done: false)
-        let item2 = Item(title: "Save the world", done: false)
+        let item2 = Item(title: "Save the world", done: true)
         let item3 = Item(title: "Get seven dragonball", done: false)
         
         items.append(item1)
@@ -69,7 +69,23 @@ extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.titleLabel.text = items[indexPath.row].title
         
+        if items[indexPath.row].done {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if items[indexPath.row].done {
+            items[indexPath.row].done = false
+        } else {
+            items[indexPath.row].done = true
+        }
+        
+        tableView.reloadData()
     }
 }
 
