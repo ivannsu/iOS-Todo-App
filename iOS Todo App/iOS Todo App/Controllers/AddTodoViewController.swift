@@ -18,10 +18,21 @@ class AddTodoViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        /*
+         navigationController?.viewControllers -> [UINavigationController]
+         navigationController?.viewControllers.remove(at: index)
+         navigationController?.viewControllers.removeLast()
+        */
+//        let lastNav = navigationController?.viewControllers.removeLast()
+//
+//        print(lastNav!)
+        
         if titleTextField.text == "" {
             print("Title is empty!")
         } else {
             delegate?.receiveNewItemData(title: titleTextField.text!)
+            navigationController?.viewControllers.removeLast()
+            print("dismis stack")
         }
     }
 
