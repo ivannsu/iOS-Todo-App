@@ -68,23 +68,13 @@ extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "toDoItemCell", for: indexPath) as! TodoItemCell
         
         cell.titleLabel.text = items[indexPath.row].title
-        
-        if items[indexPath.row].done {
-            cell.accessoryType = .checkmark
-        } else {
-            cell.accessoryType = .none
-        }
+        cell.accessoryType = items[indexPath.row].done ? .checkmark : .none
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if items[indexPath.row].done {
-            items[indexPath.row].done = false
-        } else {
-            items[indexPath.row].done = true
-        }
-        
+        items[indexPath.row].done = items[indexPath.row].done ? false : true
         tableView.reloadData()
     }
 }
