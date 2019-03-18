@@ -13,6 +13,7 @@ class TodoViewController: UIViewController {
     @IBOutlet weak var itemsTableView: UITableView!
     
     var items: [Item] = [Item]()
+    var sampleString: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,16 @@ class TodoViewController: UIViewController {
         
         // Load items data
         loadItems()
+        
+        print("sample: \(sampleString ?? "hello world from sample")")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToAddToDo" {
+            let destination = segue.destination as! AddTodoViewController
+            
+            destination.delegate = self
+        }
     }
     
     func initDelegate() {

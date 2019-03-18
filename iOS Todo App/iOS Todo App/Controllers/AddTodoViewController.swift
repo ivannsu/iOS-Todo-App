@@ -11,12 +11,18 @@ import UIKit
 class AddTodoViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     
+    var delegate: TodoViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        print(titleTextField.text!)
+        if titleTextField.text == "" {
+            print("Title is empty!")
+        } else {
+            delegate?.receiveNewItemData(title: titleTextField.text!)
+        }
     }
 
 }
