@@ -13,7 +13,7 @@ class TodoViewController: UIViewController {
 
     @IBOutlet weak var itemsTableView: UITableView!
     
-    var container: NSPersistentContainer!
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var items: [Item] = [Item]()
     
     override func viewDidLoad() {
@@ -47,13 +47,29 @@ class TodoViewController: UIViewController {
     }
     
     func loadItems() {
-        let item1 = Item(title: "Buy an egg", done: false)
-        let item2 = Item(title: "Save the world", done: true)
-        let item3 = Item(title: "Get seven dragonball", done: false)
+        /*
+        let item1 = Item(context: context)
+        item1.title = "Buy an egg"
+        item1.done = false
+        */
+ 
+        // let item1 = Item(title: "Buy an egg", done: false)
+        // let item2 = Item(title: "Save the world", done: true)
+        // let item3 = Item(title: "Get seven dragonball", done: false)
         
-        items.append(item1)
-        items.append(item2)
-        items.append(item3)
+        // items.append(item1)
+        // items.append(item2)
+        // items.append(item3)
+        
+        // saveItem()
+    }
+    
+    func saveItem() {
+        do {
+            try context.save()
+        } catch {
+            print("Error saving context: \(error)")
+        }
     }
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
@@ -83,11 +99,13 @@ extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension TodoViewController: TodoProtocol {
     func receiveNewItemData(title: String) {
+        /*
         let newItem = Item(title: title, done: false)
         
         items.append(newItem)
         itemsTableView.reloadData()
-        
+        */
+ 
         // print("received from TodoView: \(title)")
     }
 }
