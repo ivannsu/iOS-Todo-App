@@ -29,7 +29,6 @@ class AddTodoViewController: UIViewController {
         } else {
             delegate?.receiveNewItemData(title: titleTextField.text!)
             navigationController?.viewControllers.removeLast()
-            print("dismis stack")
         }
     }
 
