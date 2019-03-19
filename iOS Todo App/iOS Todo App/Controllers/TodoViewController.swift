@@ -48,14 +48,14 @@ class TodoViewController: UIViewController {
         itemsTableView.register(UINib(nibName: "TodoItemCell", bundle: nil), forCellReuseIdentifier: "toDoItemCell")
     }
     
-    func loadItems() {
-        let request: NSFetchRequest<Item> = Item.fetchRequest()
-        
+    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest()) {        
         do {
             items = try context.fetch(request)
         } catch {
             print("Error fetching context: \(error)")
         }
+        
+        itemsTableView.reloadData()
     }
     
     func saveItem(title: String) {
@@ -115,28 +115,12 @@ extension TodoViewController: UISearchBarDelegate {
         request.predicate = predicate
         request.sortDescriptors = [sortDescriptor]
         
-        do {
-            items = try context.fetch(request)
-            print("search with keyword: \(searchBar.text!)...")
-            print(items)
-        } catch {
-            print("Error fetching context: \(error)")
-        }
-        
-        itemsTableView.reloadData()
+        loadItems(with: request)
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText == "" {
-            let request: NSFetchRequest<Item> = Item.fetchRequest()
-            
-            do {
-                items = try context.fetch(request)
-            } catch {
-                print("Error fetching context: \(error)")
-            }
-            
-            itemsTableView.reloadData()
+            loadItems()
         }
     }
 }
