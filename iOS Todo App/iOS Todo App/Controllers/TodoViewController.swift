@@ -27,6 +27,9 @@ class TodoViewController: UIViewController {
         // Register NIB file for Cell
         registerComponent()
         
+        // Configure itemsTableView
+        configureTableView()
+        
         // Load items data
         loadItems()
     }
@@ -53,7 +56,7 @@ class TodoViewController: UIViewController {
         // itemsTableView.rowHeight = UITableView.automaticDimension
         // itemsTableView.estimatedRowHeight = itemsTableView.rowHeight
         
-        itemsTableView.rowHeight = 80.0
+        // itemsTableView.rowHeight = 80.0
     }
     
     func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest()) {
@@ -149,7 +152,8 @@ extension TodoViewController: SwipeTableViewCellDelegate {
             print("delete item: \(indexPath.row)")
         }
         
-        deleteAction.image = UIImage(named: "delete-icon")
+        // ISSUE: Not showing image properly
+        // deleteAction.image = UIImage(named: "delete-icon")
         
         return [deleteAction]
     }
