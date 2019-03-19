@@ -99,6 +99,8 @@ extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
         items[indexPath.row].done = !items[indexPath.row].done
         
         saveContext()
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
