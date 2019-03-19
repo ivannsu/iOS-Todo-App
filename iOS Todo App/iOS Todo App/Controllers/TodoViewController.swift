@@ -48,7 +48,7 @@ class TodoViewController: UIViewController {
         itemsTableView.register(UINib(nibName: "TodoItemCell", bundle: nil), forCellReuseIdentifier: "toDoItemCell")
     }
     
-    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest()) {        
+    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest()) {
         do {
             items = try context.fetch(request)
         } catch {
@@ -121,6 +121,11 @@ extension TodoViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText == "" {
             loadItems()
+            
+            // Turn search bar off
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
         }
     }
 }
