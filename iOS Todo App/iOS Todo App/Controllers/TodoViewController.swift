@@ -148,8 +148,10 @@ extension TodoViewController: SwipeTableViewCellDelegate {
         guard orientation == .right else { return nil }
         
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { (action, indexPath) in
-            // handle action
-            print("delete item: \(indexPath.row)")
+            self.context.delete(self.items[indexPath.row])
+            self.saveContext()
+            self.items.remove(at: indexPath.row)
+            self.itemsTableView.reloadData()
         }
         
         // ISSUE: Not showing image properly
