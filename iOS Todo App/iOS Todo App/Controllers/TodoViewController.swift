@@ -62,13 +62,17 @@ class TodoViewController: UIViewController {
         newItem.title = title
         newItem.done = false
         
+        items.append(newItem)
+        saveContext()
+    }
+    
+    func saveContext() {
         do {
             try context.save()
         } catch {
             print("Error saving context: \(error)")
         }
         
-        items.append(newItem)
         itemsTableView.reloadData()
     }
     
