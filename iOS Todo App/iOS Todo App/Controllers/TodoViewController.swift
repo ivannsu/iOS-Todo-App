@@ -12,6 +12,7 @@ import CoreData
 class TodoViewController: UIViewController {
 
     @IBOutlet weak var itemsTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var items: [Item] = [Item]()
@@ -40,6 +41,7 @@ class TodoViewController: UIViewController {
     func initDelegate() {
         itemsTableView.delegate = self
         itemsTableView.dataSource = self
+        searchBar.delegate = self
     }
     
     func registerComponent() {
@@ -101,6 +103,12 @@ extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
         saveContext()
         
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension TodoViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
     }
 }
 
