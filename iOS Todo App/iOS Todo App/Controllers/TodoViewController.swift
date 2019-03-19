@@ -96,8 +96,9 @@ extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        items[indexPath.row].done = items[indexPath.row].done ? false : true
-        tableView.reloadData()
+        items[indexPath.row].done = !items[indexPath.row].done
+        
+        saveContext()
     }
 }
 
