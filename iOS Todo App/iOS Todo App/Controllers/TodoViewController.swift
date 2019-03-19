@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SwipeCellKit
 
 class TodoViewController: UIViewController {
 
@@ -46,6 +47,13 @@ class TodoViewController: UIViewController {
     
     func registerComponent() {
         itemsTableView.register(UINib(nibName: "TodoItemCell", bundle: nil), forCellReuseIdentifier: "toDoItemCell")
+    }
+    
+    func configureTableView() {
+        // itemsTableView.rowHeight = UITableView.automaticDimension
+        // itemsTableView.estimatedRowHeight = itemsTableView.rowHeight
+        
+        itemsTableView.rowHeight = 80.0
     }
     
     func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest()) {
@@ -89,8 +97,10 @@ extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "toDoItemCell", for: indexPath) as! TodoItemCell
         
+        cell.delegate = self
         cell.titleLabel.text = items[indexPath.row].title
         cell.accessoryType = items[indexPath.row].done ? .checkmark : .none
         
@@ -127,6 +137,21 @@ extension TodoViewController: UISearchBarDelegate {
                 searchBar.resignFirstResponder()
             }
         }
+    }
+}
+
+extension TodoViewController: SwipeTableViewCellDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            // handle action
+            print("delete item: \(indexPath.row)")
+        }
+        
+        deleteAction.image = UIImage(named: "delete-icon")
+        
+        return [deleteAction]
     }
 }
 
