@@ -108,7 +108,36 @@ extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension TodoViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let request: NSFetchRequest<Item> = Item.fetchRequest()
+        let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
         
+        request.predicate = predicate
+        request.sortDescriptors = [sortDescriptor]
+        
+        do {
+            items = try context.fetch(request)
+            print("search with keyword: \(searchBar.text!)...")
+            print(items)
+        } catch {
+            print("Error fetching context: \(error)")
+        }
+        
+        itemsTableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            let request: NSFetchRequest<Item> = Item.fetchRequest()
+            
+            do {
+                items = try context.fetch(request)
+            } catch {
+                print("Error fetching context: \(error)")
+            }
+            
+            itemsTableView.reloadData()
+        }
     }
 }
 
