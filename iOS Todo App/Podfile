@@ -6,5 +6,6 @@ target 'iOS Todo App' do
 
   # Pods for iOS Todo App
     pod 'SwipeCellKit'
+    pod 'ChameleonFramework'
 
 end
