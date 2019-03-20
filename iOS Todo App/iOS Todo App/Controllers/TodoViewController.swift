@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import SwipeCellKit
+import ChameleonFramework
 
 class TodoViewController: UIViewController {
 
@@ -21,7 +22,7 @@ class TodoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.barTintColor = UIColor.black // Background Color
+        navigationController?.navigationBar.barTintColor = UIColor.flatSkyBlue() // Background Color
         navigationController?.navigationBar.tintColor = UIColor.white // Button Color
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white] // Title Color
         
