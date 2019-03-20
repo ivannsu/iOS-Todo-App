@@ -37,6 +37,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="To Do" id="UAC-Mo-4Nr">
+                        <barButtonItem key="backBarButtonItem" title=" " id="MBD-jK-NLM"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gLa-Xu-wHH">
                             <connections>
                                 <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="nZo-K1-bGC"/>
@@ -96,6 +97,7 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ziJ-kb-zff">
