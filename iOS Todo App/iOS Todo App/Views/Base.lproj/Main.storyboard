@@ -38,7 +38,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="To Do" id="UAC-Mo-4Nr">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gLa-Xu-wHH">
-                            <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="nZo-K1-bGC"/>
                             </connections>

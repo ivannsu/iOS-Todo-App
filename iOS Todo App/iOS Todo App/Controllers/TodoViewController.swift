@@ -21,6 +21,10 @@ class TodoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.barTintColor = UIColor.black // Background Color
+        navigationController?.navigationBar.tintColor = UIColor.white // Button Color
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white] // Title Color
+        
         // Perform Delegate
         initDelegate()
         
