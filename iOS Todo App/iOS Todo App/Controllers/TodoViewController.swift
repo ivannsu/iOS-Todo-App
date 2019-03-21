@@ -22,7 +22,7 @@ class TodoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.barTintColor = UIColor.flatSkyBlue() // Background Color
+        navigationController?.navigationBar.barTintColor = UIColor.flatGreen() // Background Color
         navigationController?.navigationBar.tintColor = UIColor.white // Button Color
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white] // Title Color
         
