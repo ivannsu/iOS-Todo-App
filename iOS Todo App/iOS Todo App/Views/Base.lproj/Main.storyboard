@@ -69,15 +69,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="I want to do" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6V5-lq-a9U">
-                                <rect key="frame" x="30" y="98" width="261" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="I want to do" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6V5-lq-a9U">
+                                <rect key="frame" x="30" y="98" width="261" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="TqG-Jf-dFa"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6V5-lq-a9U" firstAttribute="top" secondItem="j2B-5r-5AX" secondAttribute="top" constant="34" id="Tzx-WF-afW"/>
+                            <constraint firstItem="6V5-lq-a9U" firstAttribute="leading" secondItem="j2B-5r-5AX" secondAttribute="leading" constant="30" id="YEt-ix-ZyB"/>
+                            <constraint firstItem="j2B-5r-5AX" firstAttribute="trailing" secondItem="6V5-lq-a9U" secondAttribute="trailing" constant="29" id="koe-43-YZi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="j2B-5r-5AX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New To Do" id="zow-4Q-vvY">
